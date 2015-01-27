@@ -10,7 +10,12 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  var myobject = new Object;
+  myobject.type = "Goldfish";
+  myobject.brand = "Pepperidge Farm";
+  myobject.flavor= "Cheddar";
+  myobject.count =2000;
+  return myobject; //Modify ONLY this line
   //end your code
 }
 
@@ -38,7 +43,35 @@ function returnObjectLiteral() {
 */
 
 //your code here
+function MessageLog(user){
+  var MessageLog = new Object();
+  this.user = user;
+  this.logMessage(messageText, direction){
+    if(direction === 1){
+      messageText = "received";
+      this.totalReceived() +=1;
+    }
+    else{
+      messageText = "sent";
+      this.totalSent() += 1;
+    }
+  console.log(messageText);
+  };
 
+  this.getSentMessage(number){
+    var messagearray[5];
+    //for(i=0; i<5; i++){
+      //  messagearray[i] =
+    }
+
+  };
+
+  this.totalSent(){
+    return totalSent;
+  };
+  this.totalReceived(){
+    return totalReceived
+  };
 //end your code
 
 /**
@@ -47,7 +80,9 @@ function returnObjectLiteral() {
 * received.
 */
 //your code here
-
+lastReceivedMessage(){
+  return messagearray[0];
+}
 //end your code
 
 /**

@@ -13,7 +13,9 @@
 */
 
 //your code here
-//"hello"
+function uselessFunction(){
+  return null;
+}
 //end your code
 
 var bar = 'not a function';
@@ -30,6 +32,17 @@ var barType = typeof bar;
 */
 
 //your code here
+function anonymousFunction(doubleArray){
+  var i, max =0, sum=0;
+  for(i =0; i <doubleArray.length; i++){
+    if(doubleArray[i]*2)
+      sum++;
+  }
+  if(sum<length)
+      return false;
+  else
+      return true;
+}
 
 //end your code
 
@@ -66,5 +79,16 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
-
+function parseGit(logArray){
+  var GitLog[] = new Array(logArray.length);
+  for(var i=0; i<logArray.length; i++)
+  {
+      GitLog[i] ={
+        hash: logArray[i].slice(0,7),
+        date: logArray[i].slice(8,41),
+        message: logArray[i].slice(42, logArray.lastIndexOf())
+      }
+  }
+  return GitLog;
+}
 //end your code
