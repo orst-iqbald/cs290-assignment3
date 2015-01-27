@@ -8,16 +8,18 @@
 * @return {object} - the object literal
 */
 
+var myobject = {
+  type:"Goldfish",
+  brand: "Pepperidge Farm",
+  flavor: "Cheddar",
+  count: 2000
+};
+
 function returnObjectLiteral() {
   //your code here
-  var myobject = new Object;
-  myobject.type = "Goldfish";
-  myobject.brand = "Pepperidge Farm";
-  myobject.flavor= "Cheddar";
-  myobject.count =2000;
   return myobject; //Modify ONLY this line
   //end your code
-}
+};
 
 /**
 * Create a constructor function for a `MessageLog` object.
@@ -44,34 +46,44 @@ function returnObjectLiteral() {
 
 //your code here
 function MessageLog(user){
-  var MessageLog = new Object();
   this.user = user;
-  this.logMessage(messageText, direction){
+  this.sentmessagearray = [];
+  this.recieved = 0;
+  this.sent=0;
+
+
+  this.logMessage=function(messageText, direction){
     if(direction === 1){
-      messageText = "received";
-      this.totalReceived() +=1;
+      this.recieved +=1;
+      this.lastmessage = messageText;
     }
     else{
-      messageText = "sent";
-      this.totalSent() += 1;
+      if(direction === 0){
+      this.sent += 1;
+      this.sentmessagearray.unshift(messageText);// unshift - add message to front of array - push front
+        if(this.sentmessagearray.length>5){
+          this.sentmessagearray.pop();
+        }
     }
-  console.log(messageText);
+  }
   };
 
-  this.getSentMessage(number){
-    var messagearray[5];
-    //for(i=0; i<5; i++){
-      //  messagearray[i] =
-    }
+  this.getSentMessage = function(number){
+    if(number > this.sentmessagearray.length)
+      return "Not this many messages";
+    else
+      return this.sentmessagearray[number];
+    };
 
+  this.totalSent= function(){
+    return this.sent;
   };
 
-  this.totalSent(){
-    return totalSent;
+  this.totalReceived = function(){
+    //prompt(typeof(this.recieved));
+    return this.received;
   };
-  this.totalReceived(){
-    return totalReceived
-  };
+};
 //end your code
 
 /**
@@ -80,8 +92,11 @@ function MessageLog(user){
 * received.
 */
 //your code here
-lastReceivedMessage(){
-  return messagearray[0];
+ MessageLog.prototype.lastReceivedMessage = function(){
+  if(this.recieved)
+    return this.lastmessage;
+  else
+    return "no messages";
 }
 //end your code
 
@@ -92,5 +107,12 @@ lastReceivedMessage(){
 */
 
 //your code here
+
+var myLog = new MessageLog("BlackHatGuy");
+  myLog.logMessage("foo", 1);
+  prompt(myLog.totalReceived());
+  myLog.logMessage("bar", 1);
+  myLog.logMessage("baz", 1);
+
 
 //end your code
