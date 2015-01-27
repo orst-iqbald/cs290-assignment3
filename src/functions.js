@@ -13,7 +13,7 @@
 */
 
 //your code here
-
+//"hello"
 //end your code
 
 var bar = 'not a function';
