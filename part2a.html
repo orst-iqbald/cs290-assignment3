@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Assignment </title>
+
+</head>
+  <section>
+  </section>
+<body>
+<h3>Week 4 Assignment</h3>
+<h4> and Your Favorite Gists </h4>
+<h5 id='output-favorite' onclick='displayLocalStorage()'> click to see gists
+</h5>
+
+Part 2 of Assignment 3
+
+<form>
+  <p> <input type = "number" name="page">Number of Page to Return (30 results per page)
+  </p>
+  <p> Select Language </p>
+  <p>
+    <input type = "checkbox" name="language" value="JSON"> JavaScript
+    <input type = "checkbox" name="language" value="C++"> C++
+    <input type = "checkbox" name="language" value="SQL"> SQL
+    <input type = "checkbox" name="language" value="Python"> Python
+  </p>
+  <p>
+    <input type = "submit" value="Search">
+  </p>
+</form>
+
+<button onclick = getGists()> Get Gists</button>
+
+</body>
+
+<script type="text/javascript">
+
+
+
+function getGists(url)
+{
+  var url = 'https://api.github.com/gists/public';
+  var lang = document.getElementsByTagName('language')[0];
+
+  var page = document.getElementsByTagName('page')[0];
+  var finalurl = url + '?page=' + page + '&per_page=30';
+
+  var list = document.createElement('ul');
+  document.getElementsByTagName("body")[0].appendChild(list);
+
+  //favoriteButton = document.createElement('button');
+
+  httpRequest = new XMLHttpRequest();
+  if(page<0 && page>5)
+      httpRequest.open('GET', url);// url defined in function definiiton of getGists
+    else
+      httpRequest.open('GET', finalurl);// url defined in function definiiton of getGists
+  httpRequest.send();
+
+  httpRequest.onreadystatechange = function()
+  {
+    var favoritelist=[];
+    if(this.readyState === 4)
+    {
+        var gists = JSON.parse(this.responseText);
+        for(var i=0; i < 30; ++i)
+        {
+          var favoriteButton = document.createElement('button');
+          var buttontext = document.createTextNode("favorite");
+          var listItem= document.createElement('li');
+
+          if(lang != "")
+            {
+        //    list.appendChild(favoriteButton);
+            listItem.innerHTML= '<a href="'+gists[i]['url']+'">'+gists[i]['description'] + '</a>';
+
+//            favoriteButton.id = gists[i]['description'];
+            var name = gists[i]['description'];
+          //  var favurl = gists[i]['url'];
+            favoriteButton.onclick  = function(){
+              favoritelist.push(name);
+             // favoritelist.push(favurl);
+              localStorage.setItem('favname', favoritelist);
+             // localStorage.setItem('favurl', favoriteurl)
+              }
+
+            }
+            else
+              if(lang === gist[i]['file']['language'])
+              {
+       //         list.appendChild(favoriteButton);
+                listItem.innerHTML= '<a href= "' + gists[i]['url']+'">' + gists[i]['description'] + '</a>';
+              }
+          list.appendChild(listItem);
+          listItem.appendChild(favoriteButton);
+          favoriteButton.appendChild(buttontext);
+        }
+      }
+    }
+  }
+function displayLocalStorage(){
+  document.getElementById('output-favorite').innerHTML = localStorage.getItem('favname');
+  // document.getElementById('output-favoriteb').innerHTML = localStorage.getItem('favoriteurl');
+}
+
+/*
+function savePossFavor(){
+  localStorage.setItem('favorite', document.getElementsByName('possfavor')[0].value);
+}
+function clearLocalStorage(){
+  localStorage.clear();
+}
+function displayLocalStorage(){
+  document.getElementById('output').innerHTML = localStorage.getItem('favorites');
+}
+
+
+        // iterate through gist you get back make ul, append each gist to it and append as elemen tw/ linka nd description
+// append to div to make list of items
+
+
+
+ // save in array gist[0] for first
+ // gist[0].html
+// local storage only used fro favorites
+//  function respo(){
+  //  $('newsfeed').html(JSON.stringify(repsonse));
+ // }
+*/
+
+</script>
+</html>
+
+Figure out how to add a link to a div
+Figure out how to bind a function to a button
+Figure out how to make an ajax request to http://api.github.com/gists
+Figure out how to turn a JSON object into a actual object
+Combine the previous 2 steps to make an array of Gists
+Figure out how to get the language of the file type
+Filter the array based on the file type
+Combine the previous 4 main bullets to make a button that does this and prints the results
+Figure out how to add stuff to local storage
+Figure out how to remove stuff from local storage
+Combine the previous 2 steps and the first step to make the array of links of favorites
+
