@@ -1,1 +1,44 @@
 You log goes in this  file.
+
+
+Danish Iqbal
+Assignment 3 - Log File
+
+I didn't utilize the log as fully as I should. However, I can tell you that my testing proved to be very difficult. I had a global variable that prevented it from running correctly.
+
+commit e7a0bfc2b33e333ca9fabd87702aa82a5985693c
+Author: Danish I <iqbald@onid.oregonstate.edu>
+Date:   Tue Jan 27 17:20:23 2015 -0500
+
+    fixed objects, functions, variables
+
+commit 73621124ff55a4e5d1be337ec3a080c171ff3602
+Author: Danish I <iqbald@onid.oregonstate.edu>
+Date:   Mon Jan 26 22:49:06 2015 -0500
+commit e7a0bfc2b33e333ca9fabd87702aa82a5985693c
+Author: Danish I <iqbald@onid.oregonstate.edu>
+Date:   Tue Jan 27 17:20:23 2015 -0500
+
+    fixed objects, functions, variables
+
+commit 73621124ff55a4e5d1be337ec3a080c171ff3602
+Author: Danish I <iqbald@onid.oregonstate.edu>
+Date:   Mon Jan 26 22:49:06 2015 -0500
+
+    added objects, variables, and functions
+
+commit 8e20e2350d9cae06cfebee4e0616a0645927a212
+Author: Danish I <iqbald@onid.oregonstate.edu>
+Date:   Mon Jan 26 22:43:21 2015 -0500
+
+    initialized
+
+commit 1ae3e90924d572d8d6479573244079bf1bdd4e0c
+Author: wolfordj <wolfordj@engr.orst.edu>
+Date:   Thu Jan 22 15:45:19 2015 -0800
+
+    Test wording updated.
+
+commit 3eb5068b83969f79532c3a26c79d7abee76b7d3e
+Author: wolfordj <wolfordj@engr.orst.edu>
+Date:   Thu Jan 22 12:23:53 2015 -0800
