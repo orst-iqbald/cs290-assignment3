@@ -1,4 +1,5 @@
 /**
+last commit
 * Create an object literal with the following key value pairs:
 * type: {string} 'Goldfish'
 * brand: {string} 'Pepperidge Farm'

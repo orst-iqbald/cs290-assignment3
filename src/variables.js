@@ -1,4 +1,5 @@
 /*
+last commit
 Input:
 a: a whole, positive number
 
